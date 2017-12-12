@@ -1,0 +1,38 @@
+<h4>Class Schedule </h4>
+</br>
+</br>
+<div id="helloDIV" >
+<h3>  hello <%= @user.name.capitalize %>  </h3>
+</div>
+
+<div id="homediv">
+<ul>
+  <li><%= link_to 'Home', home_path(user: @user.name)  %></li>
+  <li><%= link_to 'About', about_path  %></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Schedule</a>
+    <div class="dropdown-content">
+      <a><%= button_to "Monday", showWorkout_path(day: 'Monday', user: @user.name), remote: true, class:"button"%></a>
+      <a><%= button_to "Tuesday", showWorkout_path(day: 'Tuesday', user: @user.name), remote: true, class:"button"%></a>
+      <a><%= button_to "Wednesday", showWorkout_path(day: 'Wednesday', user: @user.name), remote: true, class:"button"%></a>
+      <a><%= button_to "Thursday", showWorkout_path(day: 'Thursday', user: @user.name), remote: true, class:"button"%></a>
+      <a><%= button_to "Friday", showWorkout_path(day: 'Friday', user: @user.name), remote: true, class:"button"%></a>
+      <a><%= button_to "Saturday", showWorkout_path(day: 'Saturday', user: @user.name), remote: true, class:"button"%></a>
+    </div>
+  </li>
+  <li style="float:right"><%= link_to 'Log Out', logout_path, method: :delete,
+       data: { confirm: 'Are you sure ?' } %></li>
+</ul>
+
+
+<h3>Today = <%= @day %>  || Day = <%= @days%></h3>
+<h3>Today Workout</h3>
+</br>
+<div id="todayDIV" >
+<img src= <%= @image %> height="500" width="700"> 
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+
+
